@@ -1,15 +1,25 @@
-import { StatusBar } from 'expo-status-bar';
+import { useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import Header from './components/Header';
 import ButtonGrid from './components/ButtonGrid';
 import ResultWindow from './components/ResultWindow';
 
 export default function App() {
+  const [displayValue, setDisplayValue] = useState('0');
+
+  const addNumber = (num) => {
+    if (displayValue == '0') {
+      setDisplayValue(num);
+    } else {
+          setDisplayValue(displayValue + num);
+    }
+  };
+
   return (
     <View style={styles.container}>
       <Header />
-      <ResultWindow />
-      <ButtonGrid />
+      <ResultWindow dispalyValue={displayValue}/>
+      <ButtonGrid addNumber={addNumber} />
     </View>
   );
 }

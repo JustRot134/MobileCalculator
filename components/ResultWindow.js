@@ -1,10 +1,11 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, TextInput, View} from 'react-native';
+import { useState } from 'react';
+import { StyleSheet, Text, View} from 'react-native';
 
-export default function ResultWindow() {
+export default function ResultWindow({dispalyValue}) {
+
   return (
     <View style={styles.main}>
-        <TextInput style={styles.textS} placeholder='...'/>
+        <Text style={styles.textS}>{dispalyValue}</Text>
     </View>
   );
 }
@@ -22,6 +23,6 @@ const styles = StyleSheet.create({
   textS: {
     fontSize: 24,
     color: 'white',
-    textAlign: 'center',
+    textAlign: 'center'
   },
 });
