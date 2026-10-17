@@ -15,11 +15,15 @@ export default function App() {
     }
   };
 
+  const clearNumber = () => {
+    setDisplayValue('0');
+  };
+
   return (
     <View style={styles.container}>
       <Header />
       <ResultWindow dispalyValue={displayValue}/>
-      <ButtonGrid addNumber={addNumber} />
+      <ButtonGrid addNumber={addNumber} clearNumber={clearNumber} />
     </View>
   );
 }
